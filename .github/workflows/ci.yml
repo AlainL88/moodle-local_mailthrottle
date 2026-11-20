@@ -60,28 +60,28 @@ jobs:
 
       - name: PHP Lint
         if: always()
-        run: moodle-plugin-ci phplint
+        run: moodle-plugin-ci phplint ./plugin
 
       - name: Moodle Coding Style (phpcs)
         if: always()
-        run: moodle-plugin-ci codechecker
+        run: moodle-plugin-ci codechecker ./plugin
 
       - name: PHPDoc check
         if: always()
-        run: moodle-plugin-ci phpdoc
+        run: moodle-plugin-ci phpdoc ./plugin
 
       - name: Moodle Plugin Validation
         if: always()
-        run: moodle-plugin-ci validate
+        run: moodle-plugin-ci validate ./plugin
 
       - name: Upgrade Savepoints check
         if: always()
-        run: moodle-plugin-ci savepoints
+        run: moodle-plugin-ci savepoints ./plugin
 
       - name: Mustache Lint
         if: always()
-        run: moodle-plugin-ci mustache
+        run: moodle-plugin-ci mustache ./plugin
 
       - name: PHPUnit Tests
         if: always()
-        run: moodle-plugin-ci phpunit
+        run: moodle-plugin-ci phpunit ./plugin
