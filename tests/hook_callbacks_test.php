@@ -26,7 +26,6 @@ namespace local_mailthrottle;
  */
 #[\PHPUnit\Framework\Attributes\CoversClass(hook_callbacks::class)]
 final class hook_callbacks_test extends \advanced_testcase {
-
     /**
      * Set up test environment.
      */

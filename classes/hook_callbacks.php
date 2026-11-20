@@ -26,7 +26,6 @@ use core\hook\email\before_email_to_user;
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class hook_callbacks {
-
     /**
      * Throttle outgoing emails by spacing sends according to plugin settings.
      *
@@ -69,9 +68,15 @@ class hook_callbacks {
             return 0;
         }
 
-        if (empty($user) || empty($user->id) || empty($user->email) || !empty($user->deleted)
-                || !empty($user->suspended) || ($user->auth ?? '') === 'nologin'
-                || str_ends_with($user->email, '.invalid')) {
+        if (
+            empty($user)
+            || empty($user->id)
+            || empty($user->email)
+            || !empty($user->deleted)
+            || !empty($user->suspended)
+            || ($user->auth ?? '') === 'nologin'
+            || str_ends_with($user->email, '.invalid')
+        ) {
             return 0;
         }
 
