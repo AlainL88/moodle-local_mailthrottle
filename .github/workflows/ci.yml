@@ -45,6 +45,9 @@ jobs:
           extensions: pgsql, intl, soap, zip, gd
           ini-values: max_input_vars=5000
 
+      - name: Install en_AU.UTF-8 locale
+        run: sudo locale-gen en_AU.UTF-8
+
       - name: Install moodle-plugin-ci
         run: |
           composer create-project -n --no-dev --prefer-dist moodlehq/moodle-plugin-ci ci ^4
